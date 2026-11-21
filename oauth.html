@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Connector sign-in</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="wrap">
+<h1>Finishing sign-in…</h1>
+<p>Sending you back to Connector on this computer.</p>
+<p class="muted">If nothing happens, make sure Connector is running (<code>node server.mjs</code>) and open <a id="go" href="http://localhost:3939/">Connector</a>.</p>
+<script>
+// Forwards the sign-in result to Connector on this computer only. Nothing is stored or sent anywhere else.
+// Only the query string (code, state, error) is passed on, always to the fixed local address.
+(function () {
+  var q = new URLSearchParams(location.search), out = new URLSearchParams();
+  ['code', 'state', 'error', 'error_reason', 'error_description', 'scope'].forEach(function (k) { if (q.has(k)) out.set(k, q.get(k)); });
+  var to = 'http://localhost:3939/oauth/relay?' + out.toString();
+  document.getElementById('go').href = to;
+  if (out.has('state')) location.replace(to);
+})();
+</script>
+</div></body></html>
