@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connector</title><meta name="description" content="Connector is a personal tool that links your own social accounts to an AI assistant on your computer.">
+<link rel="icon" href="icon.png"><link rel="stylesheet" href="style.css"></head>
+<body><div class="wrap">
+<header><img src="icon.png" alt=""><a href="./">Connector</a><nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></header>
+<h1>Your accounts, connected to your own assistant</h1>
+<p>Connector is a small personal app that runs on your own computer. It lets you connect accounts you own, such as TikTok, YouTube and Instagram, and then use them from an AI assistant: read your profile stats, list your videos, and upload videos you made.</p>
+<div class="card">
+  <h2 style="margin-top:0">How it works</h2>
+  <ol>
+    <li>You run Connector on your computer. It is not a public service and has no user accounts.</li>
+    <li>You sign in to each platform with that platform's own login page and choose what to allow.</li>
+    <li>Your sign-in tokens are stored encrypted on your computer only. Nothing is sent to us.</li>
+    <li>You can disconnect any account at any time, inside Connector or in the platform's own settings.</li>
+  </ol>
+</div>
+<h2>What it uses from TikTok</h2>
+<ul>
+  <li><strong>Login Kit</strong>: to sign in with your TikTok account.</li>
+  <li><strong>Display API</strong> (<code>user.info.basic</code>, <code>user.info.profile</code>, <code>user.info.stats</code>, <code>video.list</code>): to show your own profile, follower counts and videos.</li>
+  <li><strong>Content Posting API</strong> (<code>video.upload</code>, <code>video.publish</code>): to upload videos you created to your own account, as drafts or posts you approve.</li>
+</ul>
+<p class="muted">Connector never posts without the account owner's action, never reads other people's private data, and never sells or shares data.</p>
+<footer>Connector is a personal, non-commercial project. Questions: <a href="https://github.com/vanesabesenic14/connector-app/issues">open an issue on GitHub</a>.</footer>
+</div></body></html>
